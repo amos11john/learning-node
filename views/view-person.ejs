@@ -1,0 +1,78 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="view-person content">
+        <h2><%= result.firstName + ' ' + result.middleName.charAt(0) + '. ' + result.lastName %></h2>
+        <form method="GET">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="firstName">First Name: </label>
+                <input type="text" id="firstName" value="<%= result.firstName %>" disabled>
+                <label for="middleName">Middle Name: </label>
+                <input type="text" id="middleName" value="<%= result.middleName %>" disabled>
+                <label for="lastName">Last Name: </label>
+                <input type="text" id="lastName" value="<%= result.lastName %>" disabled>
+                <label for="gender">Gender: </label>
+                <input type="text" id="gender" value="<%= result.gender %>" disabled>
+                <label for="birthdate">Birthday: </label>
+                <input type="text" id="birthdate" value="<%= result.birthdate %>" disabled>
+                <label for="age">Age: </label>
+                <input type="text" id="age" value="<%= result.age %>" disabled>
+                <label for="civilStatus">Civil Status: </label>
+                <input type="text" id="civilStatus" value="<%= result.civilStatus %>" disabled>
+            </fieldset>
+            <fieldset>
+                <legend>Address</legend>
+                <label for="address1">Address: </label>
+                <textarea type="text" id="address1" disabled>
+                    <%= result.address[0].address %>
+                </textarea>
+                <label for="city">City: </label>
+                <input type="text" id="city" value="<%= result.address[0].city %>" disabled>
+                <label for="region">Region: </label>
+                <input type="text" id="region" value="<%= result.address[0].region %>" disabled>
+                <label for="country">Country: </label>
+                <input type="text" id="country" value="<%= result.address[0].country %>" disabled>
+            </fieldset>
+            <fieldset>
+                <legend>Contact Details</legend>
+                <label for="contactNumber">Contact Number: </label>
+                <input type="text" id="contactNumber" value="<%= result.contactNumber %>" disabled>
+                <label for="email">Email: </label>
+                <input type="text" id="email" value="<%= result.email %>" disabled>
+                <fieldset>
+                    <legend>Social Media</legend>
+                    <label for="facebook">Facebook: </label>
+                    <input type="text" id="facebook" value="<%= result.socialMedia[0].facebook %>" disabled>
+                    <label for="instagram">Instagram: </label>
+                    <input type="text" id="instagram" value="<%= result.socialMedia[0].instagram %>" disabled>
+                </fieldset>
+            </fieldset>
+            <a class="delete" data-doc="<%= result.id %>">
+                <img src="../public/trashcan.svg" alt="delete icon">
+            </a>
+        
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        const trashCan = document.querySelector('a.delete');
+
+        trashCan.addEventListener('click', (e) => {
+            
+            const endpoint = `/person/delete/${trashCan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err));
+        })
+    </script>
+</body>
+</html>

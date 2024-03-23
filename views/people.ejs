@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="master-list content">
+        <h2>Master List</h2>
+        <% if (people.length > 0) {%>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Civil Status</th>
+                    <th>Age</th>
+                    <th>Birthdate</th>
+                    <th>Address</th>
+                    <th>Contanct No.</th>
+                    <th>Email</th>
+                    <th>Social Media</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <% people.forEach(person => { %>
+                        <tr>
+                            <td>
+                                <a href="/person/<%= person.id %>">
+                                   <h3><%= person.fullName %></h3>
+                                </a>
+                            </td>
+                            <td> <%= person.gender %> </td>
+                            <td> <%= person.civilStatus %> </td>
+                            <td> <%= person.age %> </td>
+                            <td> <%= person.birthdate %> </td>
+                            <td> <%= person.completeAddress %> </td>
+                            <td> <%= person.contactNumber %> </td>
+                            <td> <%= person.email %> </td>
+                            <td> <%= person.socialMedia %> </td>
+                        </tr>
+                   <% }) %>
+               
+            </tbody>
+        </table>      
+        <% } else {%>
+            <p>No attendance recorded yet</p>
+        <% } %>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

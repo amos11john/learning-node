@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="attendance-create content">
+        <h2>New attendance</h2>
+        <form>
+            <label for="date">Attendance Date:</label>
+            <input type="text" id="date" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="time">Service Time:</label>
+            <input type="text" id="time" required>
+            <label for="comments">Comments:</label>
+            <textarea id="comments" required></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
