@@ -21,7 +21,8 @@ mongoose.connect(dbURI)
 app.set('view engine', 'ejs')
 
 //middleware & static files
-app.use(express.static('public'))
+
+app.use("/public", express.static('public'));
 app.use(express.urlencoded({extended:true}));
 app.use(morgan('dev'))
 
@@ -34,34 +35,9 @@ app.get('/bootstrap-demo', (req, res) => {
 app.use('/person',peopleRoutes);
 
 
-// app.get('/', (req, res) =>{
-//     MasterList.find().sort({firstName: -1})
-//     .then((results) =>{
-//         const people = [{}];
-
-//         results.forEach(result => {
-//             const person = {
-//                 id : result._id,
-//                 fullName : result.firstName + ' ' + result.middleName.charAt(0) + '. ' + result.lastName,
-//                 gender : result.gender,
-//                 civilStatus : result.civilStatus,
-//                 age : result.age,
-//                 birthdate : result.birthdate,
-//                 completeAddress : result.address[0].city + ' ' + result.address[0].region + ' ' + result.address[0].country,
-//                 contactNumber : result.contactNumber,
-//                 email : result.email,
-//                 socialMedia : "facebook: " + result.socialMedia[0].facebook + ', instagram: ' + result.socialMedia[0].instagram,
-//             } 
-//             people.push(person)
-//         });
-
-//         //res.send(people)
-//        res.render('people', {title: "Home", people});
-//     })
-//     .catch((err) =>{
-//         console.log(err)
-//     })
-// })
+app.get('/', (req, res) =>{
+    res.render('index', {title: "Home"});
+})
 
 app.use((req,res, next) =>{
     console.log("new request made: ");
