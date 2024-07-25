@@ -28,7 +28,7 @@ app.use(morgan('dev'))
 
 // bootstrap demo
 app.get('/bootstrap-demo', (req, res) => {
-    res.render('bootstrap-demo')
+    res.render('bootstrap-demo', {title: "Practice"})
 })
 
 //people routes
