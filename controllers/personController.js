@@ -44,6 +44,10 @@ const person_create_get = (req, res) => {
     res.render('add-person', {title: "Add Member"})
 };
 
+const person_new_create_get = (req, res) => {
+    res.render('add-member', {title: "Add Member"})
+};
+
 const person_create_post = (req, res) =>{
     let form = req.body;
  
@@ -92,6 +96,7 @@ const person_create_post = (req, res) =>{
 module.exports = {
     person_index,
     person_details,
+    person_new_create_get,
     person_create_get,
     person_create_post,
     person_delete

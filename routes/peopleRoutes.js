@@ -4,7 +4,9 @@ const personController = require('../controllers/personController');
 
 router.get('/people', personController.person_index);
 
-router.get('/add', personController.person_create_get);
+// router.get('/add', personController.person_create_get);
+
+router.get('/add', personController.person_new_create_get);
 
 router.post('/add',personController.person_create_post);
 
