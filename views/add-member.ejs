@@ -13,38 +13,34 @@
 
             <div class="col-lg-6">
                 <form class="row g-3">
+                    <h4 class="mb-2">Personal Information</h4>
+                    <!-- First Name -->
                     <div class="col-md-4">
-                        <!-- First Name -->
-                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="Juan" aria-label="First Name">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="e.g. Juan" aria-label="First Name">
                     </div>
-
-                    <div class="col-md-4">
-                         <!-- Middle Name -->
-                         <label for="middleName" class="form-label">Middle Name</label>
-                         <input type="text" class="form-control" placeholder="Reyes" aria-label="Middle Name">
+                    <!-- Middle Name -->
+                    <div class="col-md-4">                         
+                        <label for="middleName" class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" placeholder="e.g. Reyes" aria-label="Middle Name">
                     </div>
-
-                    <div class="col-md-4">
-                        <!-- Last Name -->
+                    <!-- Last Name -->
+                    <div class="col-md-4">                        
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                        <input type="text" class="form-control" placeholder="e.g. dela Cruz" aria-label="Last Name">
                     </div>
-
-                    <div class="col-md-6">
-                        <!-- Birthday-->
+                    <!-- Birthday-->
+                    <div class="col-md-6">                        
                          <label for="birthday" class="form-label">Birthday</label>
                          <input type="date" class="form-control" aria-label="birthday">
                     </div>
-
+                    <!--Age-->
                     <div class="col-md-6">
-                        <!--Age-->
                         <label for="ageDisabled" class="form-label">Age</label>
                         <input type="text" class="form-control" disabled aria-label="age">
                     </div>
-
-                    <div class="col-md-6">
-                        <!--Gender-->
+                    <!--Gender-->
+                    <div class="col-md-6">                        
                         <label class="form-label">Gender</label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="gender">
@@ -59,19 +55,44 @@
                             </label>
                           </div>
                     </div>
-
+                    <!--Civil Status-->
                     <div class="col-md-6">
-                        <!--Civil Status-->
                         <label class="form-label">Civil Status</label>
-                        <select name="civilStatus" id="civilStatus" class="form-select" aria-label="Select civil status">
-                            <option selected>What is your current status?</option>
-                            <option value="Single">Single</option>
-                            <option value="Married">Married</option>
-                            <option value="Widowed">Widowed</option>
-                            <option value="Separated">Separated</option>
-                            <option value="Divorced">Divorced</option>
-                            <option value="Annulled">Annulled</option>
-                        </select>
+                        <div class="form-floating">
+                            <select name="civilStatus" id="civilStatus" class="form-select" aria-label="Select civil status">
+                                <option value="Single" selected>Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Widowed">Widowed</option>
+                                <option value="Separated">Separated</option>
+                                <option value="Divorced">Divorced</option>
+                                <option value="Annulled">Annulled</option>
+                            </select>
+                            <label for="civilStatus">What's your current status?</label>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-2">Address Details</h4>
+                    <!--Address 1-->
+                    <div class="col-12">
+                        <label class="form-label">Address 1</label>
+                        <textarea name="address1" id="" class="form-control"></textarea>
+                    </div>
+                    <!--City-->
+                    <div class="col-md-4">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" placeholder="e.g. Manila" aria-label="city">
+                    </div>
+                    <!--Region-->
+                    <div class="col-md-4">
+                        <label for="region" class="form-label">Region</label>
+                        <input type="text" class="form-control" placeholder="e.g. NCR" aria-label="region">
+                    </div>
+                    <!--Zip Code-->
+                    <div class="col-md-4">
+                        <label for="city" class="form-label">Zip Code</label>
+                        <input type="number" class="form-control" placeholder="e.g. 1001" aria-label="zip code">
                     </div>
                    
                 </form>
