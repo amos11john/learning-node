@@ -75,7 +75,7 @@ const person_create_post = (req, res) =>{
     }];
     person.save()
     .then((result) =>{
-       res.redirect('/person/add');
+       res.redirect('/person/people');
     })
     .catch((err) =>{
         console.log(err)
