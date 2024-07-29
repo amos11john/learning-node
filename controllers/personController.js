@@ -58,19 +58,20 @@ const person_create_post = (req, res) =>{
     person.middleName = form.middleName;
     person.gender = form.gender;
     person.civilStatus = form.civilStatus;
-    person.age = form.age;
     person.birthdate = form.birthdate;
     person.address = [{
         address : form.address1 + ' ' + form.address2,
         city: form.city,
         region: form.region,
-        country: form.country
+        country: form.country,
+        zipCode: form.zipCode
     }];
     person.contactNumber = form.contactNumber;
     person.email = form.email;
     person.socialMedia = [{
         facebook : form.facebook,
-        instagram: form.instagram
+        instagram: form.instagram,
+        linkedin: form.linkedin
     }];
     person.save()
     .then((result) =>{

@@ -12,54 +12,55 @@
         <div class="row justify-content-center my-5">
 
             <div class="col-lg-6">
-                <form class="row g-3">
+                <form action="/person/add" method="POST" class="row g-3">
                     <h4 class="mb-2">Personal Information</h4>
                     <!-- First Name -->
                     <div class="col-md-4">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="e.g. Juan" aria-label="First Name">
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. Juan" aria-label="First Name">
                     </div>
                     <!-- Middle Name -->
                     <div class="col-md-4">                         
                         <label for="middleName" class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" placeholder="e.g. Reyes" aria-label="Middle Name">
+                        <input type="text" id="middleName" name="middleName" class="form-control" placeholder="e.g. Reyes" aria-label="Middle Name">
                     </div>
                     <!-- Last Name -->
                     <div class="col-md-4">                        
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="e.g. dela Cruz" aria-label="Last Name">
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. dela Cruz" aria-label="Last Name">
                     </div>
-                    <!-- Birthday-->
-                    <div class="col-md-6">                        
-                         <label for="birthday" class="form-label">Birthday</label>
-                         <input type="date" class="form-control" aria-label="birthday">
-                    </div>
-                    <!--Age-->
-                    <div class="col-md-6">
-                        <label for="ageDisabled" class="form-label">Age</label>
-                        <input type="text" class="form-control" disabled aria-label="age">
-                    </div>
-                    <!--Gender-->
-                    <div class="col-md-6">                        
+                     <!--Gender-->
+                     <div class="col-md-6">                        
                         <label class="form-label">Gender</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender">
+                            <input class="form-check-input" type="radio" name="gender" value="Male">
                             <label class="form-check-label" for="gender1">
                               Male
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender">
+                            <input class="form-check-input" type="radio" name="gender" value="Female">
                             <label class="form-check-label" for="gender2">
                               Female
                             </label>
                           </div>
                     </div>
+                    <!-- Birthday-->
+                    <div class="col-md-6">                        
+                         <label for="birthdate" class="form-label">Birthday</label>
+                         <input type="date" id="birthdate" name="birthdate" class="form-control" aria-label="birthday">
+                    </div>
+                    <!--Age-->
+                    <!-- <div class="col-md-6">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" id="age" name="age" class="form-control" disabled aria-label="age">
+                    </div> -->
+                   
                     <!--Civil Status-->
                     <div class="col-md-6">
-                        <label class="form-label">Civil Status</label>
+                        <label class="form-label" for="civilStatus">Civil Status</label>
                         <div class="form-floating">
-                            <select name="civilStatus" id="civilStatus" class="form-select" aria-label="Select civil status">
+                            <select name="civilStatus" id="civilStatus" name="civilStatus" class="form-select" aria-label="Select civil status">
                                 <option value="Single" selected>Single</option>
                                 <option value="Married">Married</option>
                                 <option value="Widowed">Widowed</option>
@@ -76,23 +77,33 @@
                     <h4 class="mb-2">Address Details</h4>
                     <!--Address 1-->
                     <div class="col-12">
-                        <label class="form-label">Address 1</label>
-                        <textarea name="address1" id="" class="form-control"></textarea>
+                        <label class="form-label" for="address1">Address 1</label>
+                        <input type="text" id="address1" name="address1" class="form-control">
+                    </div>
+                     <!--Address 2-->
+                     <div class="col-12">
+                        <label class="form-label" for="address2">Address 2</label>
+                        <input type="text" id="address2" name="address2" class="form-control">
                     </div>
                     <!--City-->
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" placeholder="e.g. Manila" aria-label="city">
+                        <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Manila" aria-label="city">
                     </div>
                     <!--Region-->
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="region" class="form-label">Region</label>
-                        <input type="text" class="form-control" placeholder="e.g. NCR" aria-label="region">
+                        <input type="text" class="form-control" id="region" name="region" placeholder="e.g. NCR" aria-label="region">
+                    </div>
+                    <!--Country-->
+                    <div class="col-md-9">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="e.g. Philippines" aria-label="country">
                     </div>
                     <!--Zip Code-->
-                    <div class="col-md-4">
-                        <label for="city" class="form-label">Zip Code</label>
-                        <input type="number" class="form-control" placeholder="e.g. 1001" aria-label="zip code">
+                    <div class="col-md-3">
+                        <label for="zipCode" class="form-label">Zip Code</label>
+                        <input type="number" class="form-control" id="zipCode" name="zipCode" placeholder="e.g. 1001" aria-label="zip code">
                     </div>
 
                     <hr class="my-4">
@@ -100,12 +111,12 @@
                     <h4 class="mb-2">Contact and Social Media</h4>
                     <!--Mobile No.-->
                     <div class="col-md-6">
-                        <label for="mobile" class="form-label">Mobile No.</label>
+                        <label for="contactNumber" class="form-label">Mobile No.</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="bi bi-phone-fill"></i>
                             </span>
-                            <input type="text" class="form-control">
+                            <input type="number" id="contactNumber" name="contactNumber" class="form-control">
                         </div>
                     </div>
                     <!--Email-->
@@ -115,7 +126,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-envelope-fill"></i>
                             </span>
-                            <input type="email" class="form-control">
+                            <input type="email" id="email" name="email" class="form-control">
                         </div>
                     </div>
                     <!--Facebook-->
@@ -125,7 +136,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-facebook"></i>
                             </span>
-                            <input type="facebook" class="form-control">
+                            <input type="text" id="facebook" name="facebook" class="form-control">
                         </div>
                     </div>
                     <!--Instagram-->
@@ -135,7 +146,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-instagram"></i>
                             </span>
-                            <input type="instagram" class="form-control">
+                            <input type="text" id="instagram" name="instagram" class="form-control">
                         </div>
                     </div>
                     <!--LinkedIn-->
@@ -145,7 +156,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-linkedin"></i>
                             </span>
-                            <input type="linkedin" class="form-control">
+                            <input type="text" id="linkedin" name="linkedin" class="form-control">
                         </div>
                     </div>
 

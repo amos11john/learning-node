@@ -24,7 +24,6 @@ const masterlistSchema = new Schema({
     },
     age: {
         type: String,
-        required: true
     },	
     birthdate: {
         type: String,
