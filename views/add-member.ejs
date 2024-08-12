@@ -17,38 +17,34 @@
                     <!-- First Name -->
                     <div class="col-md-4">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. Juan" aria-label="First Name">
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. Juan" aria-label="First Name" required>
                     </div>
                     <!-- Middle Name -->
                     <div class="col-md-4">                         
                         <label for="middleName" class="form-label">Middle Name</label>
-                        <input type="text" id="middleName" name="middleName" class="form-control" placeholder="e.g. Reyes" aria-label="Middle Name">
+                        <input type="text" id="middleName" name="middleName" class="form-control" placeholder="e.g. Reyes" aria-label="Middle Name" required>
                     </div>
                     <!-- Last Name -->
                     <div class="col-md-4">                        
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. dela Cruz" aria-label="Last Name">
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. dela Cruz" aria-label="Last Name" required>
                     </div>
                      <!--Gender-->
                      <div class="col-md-6">                        
                         <label class="form-label">Gender</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value="Male">
-                            <label class="form-check-label" for="gender1">
-                              Male
-                            </label>
+                            <input class="form-check-input" type="radio" name="gender" value="Male" required>
+                            <label class="form-check-label" for="gender1">Male</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value="Female">
-                            <label class="form-check-label" for="gender2">
-                              Female
-                            </label>
+                            <input class="form-check-input" type="radio" name="gender" value="Female" required>
+                            <label class="form-check-label" for="gender2">Female</label>
                           </div>
                     </div>
                     <!-- Birthday-->
                     <div class="col-md-6">                        
                          <label for="birthdate" class="form-label">Birthday</label>
-                         <input type="date" id="birthdate" name="birthdate" class="form-control" aria-label="birthday">
+                         <input type="date" id="birthdate" name="birthdate" class="form-control" aria-label="birthday" required>
                     </div>
                     <!--Age-->
                     <!-- <div class="col-md-6">
@@ -60,7 +56,7 @@
                     <div class="col-md-6">
                         <label class="form-label" for="civilStatus">Civil Status</label>
                         <div class="form-floating">
-                            <select name="civilStatus" id="civilStatus" name="civilStatus" class="form-select" aria-label="Select civil status">
+                            <select name="civilStatus" id="civilStatus" name="civilStatus" class="form-select" aria-label="Select civil status" required>
                                 <option value="Single" selected>Single</option>
                                 <option value="Married">Married</option>
                                 <option value="Widowed">Widowed</option>
@@ -78,7 +74,7 @@
                     <!--Address 1-->
                     <div class="col-12">
                         <label class="form-label" for="address1">Address 1</label>
-                        <input type="text" id="address1" name="address1" class="form-control">
+                        <input type="text" id="address1" name="address1" class="form-control" required>
                     </div>
                      <!--Address 2-->
                      <div class="col-12">
@@ -88,22 +84,22 @@
                     <!--City-->
                     <div class="col-md-6">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Manila" aria-label="city">
+                        <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Manila" aria-label="city" required>
                     </div>
                     <!--Region-->
                     <div class="col-md-6">
                         <label for="region" class="form-label">Region</label>
-                        <input type="text" class="form-control" id="region" name="region" placeholder="e.g. NCR" aria-label="region">
+                        <input type="text" class="form-control" id="region" name="region" placeholder="e.g. NCR" aria-label="region" required>
                     </div>
                     <!--Country-->
                     <div class="col-md-9">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" placeholder="e.g. Philippines" aria-label="country">
+                        <input type="text" class="form-control" id="country" name="country" placeholder="e.g. Philippines" aria-label="country" required>
                     </div>
                     <!--Zip Code-->
                     <div class="col-md-3">
                         <label for="zipCode" class="form-label">Zip Code</label>
-                        <input type="number" class="form-control" id="zipCode" name="zipCode" placeholder="e.g. 1001" aria-label="zip code">
+                        <input type="number" class="form-control" id="zipCode" name="zipCode" placeholder="e.g. 1001" aria-label="zip code" required>
                     </div>
 
                     <hr class="my-4">
@@ -116,7 +112,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-phone-fill"></i>
                             </span>
-                            <input type="number" id="contactNumber" name="contactNumber" class="form-control">
+                            <input type="number" id="contactNumber" name="contactNumber" class="form-control" required>
                         </div>
                     </div>
                     <!--Email-->
@@ -126,7 +122,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-envelope-fill"></i>
                             </span>
-                            <input type="email" id="email" name="email" class="form-control">
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                     </div>
                     <!--Facebook-->
